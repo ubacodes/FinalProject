@@ -13,17 +13,17 @@ namespace ConsoleUI
 
             foreach (var product in productManager.GetAll())
             {
-                Console.WriteLine(product.ProductName);
+                Console.WriteLine("Tüm Ürünler: "+product.ProductName);
             }
             // aşağıdakileri ben ekledim
             foreach (var product in productManager.GetAllByCategoryId(1))
             {
-                Console.WriteLine(product.CategoryId+product.ProductName);
+                Console.WriteLine("Ürünlerin KategoriId'leri: "+product.CategoryId+" Ürünlerin İsimleri: "+product.ProductName);
             }
 
             foreach (var product in productManager.GetByUnitPrice(15,25))
             {
-                Console.WriteLine(product.UnitPrice+product.ProductName);
+                Console.WriteLine("Ürünlerin Birim Fiyatları: "+product.UnitPrice+" Ürünülerin İsimleri: "+product.ProductName);
             }
 
         }

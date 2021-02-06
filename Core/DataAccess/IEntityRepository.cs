@@ -1,11 +1,10 @@
-﻿using Entities.Abstract;
-using Entities.Concrete;
+﻿using Core.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq.Expressions; // Expression için using ettik
 using System.Text;
 
-namespace DataAccess.Abstract
+namespace Core.DataAccess
 {
     // Generic constraint = generic yapıda kısıtlama oluşturmak
     // new() :  new'lenebilir olmalı , interfaceler newlemez oldukları için IEntity koyamayız sadece onu inheritance eden classlarını kullanabiliriz product, customer, category

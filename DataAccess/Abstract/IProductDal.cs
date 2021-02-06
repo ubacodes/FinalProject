@@ -1,4 +1,4 @@
-﻿using DataAccess.Abstract;
+﻿using Core.DataAccess;
 using Entities.Concrete; // Entities katmanını using edebilmek için DataAccess katmanında Dependencies'a Add project referance to diyerek Entities katmanını ekliyoruz
 using System;
 using System.Collections.Generic;

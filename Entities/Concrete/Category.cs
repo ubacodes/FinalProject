@@ -1,4 +1,4 @@
-﻿using Entities.Abstract; // aynı katmanda da olsa başka bir klasördeki elemanı kullanacağını belirtmen gerekiyor
+﻿using Core.Entities; // aynı katmanda da olsa başka bir klasördeki elemanı kullanacağını belirtmen gerekiyor
 using System;
 using System.Collections.Generic;
 using System.Text;
