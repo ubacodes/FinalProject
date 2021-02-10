@@ -6,6 +6,7 @@ using System.Linq;
 using System.Linq.Expressions;
 using System.Text;
 
+// EntityFramework kullanarak repository base'i oluştur (Ana şablonu evrensel olarak her yerde kullanabileceğimiz)
 namespace Core.DataAccess.EntityFramework
 {
     // artık DataAccess içerisindeki EntityFramework klasörü içerisinde EfProductdal gibi veri yönetimi katmanlarını tek bir kere CRUD işlemlerini burada yapıp diğerlerinden 
