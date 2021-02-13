@@ -1,5 +1,6 @@
 ﻿using DataAccess.Abstract; // IProductDal interface'ini kullanabilmek için using ekledik
 using Entities.Concrete;
+using Entities.Concrete.DTOs;
 using System;
 using System.Collections.Generic;
 using System.Linq; // LINQ' u kullanabilmek için using ettik
@@ -69,6 +70,11 @@ namespace DataAccess.Concrete.InMemory
         public List<Product> GetAllByCategory(int categoryId)
         {
             return _products.Where(p => p.CategoryId == categoryId).ToList(); // where koşulu içerisindeki şartlara uyan bütün elemanları yeni bir liste haline getirip onu döndürür
+        }
+
+        public List<ProductDetailDto> GetProductDetails()
+        {
+            throw new NotImplementedException();
         }
 
         public void Update(Product product)
