@@ -8,6 +8,10 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using Business.Constants;
+using Business.ValidationRules.FluentValidation;
+using FluentValidation;
+using Core.CrossCuttingConcerns.Validation;
+using Core.Aspects.Autofac.Validation;
 
 namespace Business.Concrete
 {
@@ -20,15 +24,13 @@ namespace Business.Concrete
             _productDal = productDal;
         }
 
+        [ValidationAspect(typeof(ProductValidator))]
         public IResult Add(Product product)
         {
-            if (product.ProductName.Length < 2)
-            {
-                return new ErrorResult(Messages.ProductNameInvalid);
-            }
+            // business codes
 
             _productDal.Add(product);
-            return new Result(true, Messages.ProductAdded);  // döndürülecek değeri Result nesnesi oluştur dedik.
+            return new Result(true, Messages.Added);  // döndürülecek değeri Result nesnesi oluştur dedik.
         }
 
         public IDataResult<List<Product>> GetAll()
@@ -42,7 +44,7 @@ namespace Business.Concrete
                 return new ErrorDataResult<List<Product>>(Messages.MaintenanceTime);
             }
 
-            return new SuccessDataResult<List<Product>>(_productDal.GetAll(), Messages.ProductListed);
+            return new SuccessDataResult<List<Product>>(_productDal.GetAll(), Messages.Listed);
         }
 
         public IDataResult<List<Product>> GetAllByCategoryId(int id)

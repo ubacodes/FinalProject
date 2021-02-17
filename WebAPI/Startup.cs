@@ -32,8 +32,8 @@ namespace WebAPI
         {
 
             services.AddControllers();
-            services.AddSingleton<IProductService, ProductManager>();  // içerisinde data yoksa kullanılır aksi takdirde 1 kişinin yaptığı işlemi herkeste yapmış olur
-            services.AddSingleton<IProductDal, EfProductDal>(); // burası da ProductManager'ın bağımlı olduğu IProductDal nesnesi için 
+            //services.AddSingleton<IProductService, ProductManager>();  // içerisinde data yoksa kullanılır aksi takdirde 1 kişinin yaptığı işlemi herkeste yapmış olur
+            //services.AddSingleton<IProductDal, EfProductDal>(); // burası da ProductManager'ın bağımlı olduğu IProductDal nesnesi için 
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "WebAPI", Version = "v1" });

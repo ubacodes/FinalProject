@@ -4,6 +4,9 @@ using System.Collections.Generic;
 using System.Text;
 using Entities.Concrete;
 using DataAccess.Abstract;
+using Core.Utilities.Results;
+using Business.Constants;
+
 
 namespace Business.Concrete
 {
@@ -16,16 +19,14 @@ namespace Business.Concrete
                 _categoryDal = categoryDal;
             }
 
-            public List<Category> GetAll()
-            {
-                //İş kodları
-                return _categoryDal.GetAll();
-            }
-
-            //Select * from Categories where CategoryId = 3
-            public Category GetById(int categoryId)
-            {
-                return _categoryDal.Get(c => c.CategoryId == categoryId);
-            }
+        public IDataResult<List<Category>> GetAll()
+        {
+            return new SuccessDataResult<List<Category>>(_categoryDal.GetAll(),Messages.Added);
         }
+
+        public IDataResult<List<Category>> GetById(int categoryId)
+        {
+            return new SuccessDataResult<List<Category>>(_categoryDal.GetAll(c => c.CategoryId == categoryId));
+        }
+    }
     }
