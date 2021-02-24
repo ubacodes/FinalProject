@@ -15,5 +15,7 @@ namespace Business.Abstract
         IDataResult<List<ProductDetailDto>> GetProductDetails();
         IDataResult<Product> GetById(int productId);
         IResult Add(Product product); // ben bir result nesnesi döndürmek istiyorum diyorum
+        IResult Update(Product product);
+        IResult Delete(Product product);
     }
 }

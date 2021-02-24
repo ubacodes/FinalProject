@@ -9,6 +9,7 @@ using DataAccess.Concrete.EntityFramework;
 using Autofac.Extras.DynamicProxy;
 using Castle.DynamicProxy;
 using Core.Utilities.Interceptors;
+using Business.CCS;
 
 namespace Business.DependencyResolvers.Autofac
 {
@@ -19,7 +20,8 @@ namespace Business.DependencyResolvers.Autofac
             builder.RegisterType<ProductManager>().As<IProductService>().SingleInstance();   // WebAPI'da statup içerisinde yapmaktansa burada aynı şekilde birisi senden IproductService isterse ProductManager referansı ver
             builder.RegisterType<EfProductDal>().As<IProductDal>().SingleInstance();
 
-
+            builder.RegisterType<CategoryManager>().As<ICategoryService>().SingleInstance();
+            builder.RegisterType<EfCategoryDal>().As<ICategoryDal>().SingleInstance();
 
             var assembly = System.Reflection.Assembly.GetExecutingAssembly();
 

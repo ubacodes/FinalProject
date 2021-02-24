@@ -10,18 +10,18 @@ using Business.Constants;
 
 namespace Business.Concrete
 {
-        public class CategoryManager : ICategoryService
-        {
-            ICategoryDal _categoryDal;
+    public class CategoryManager : ICategoryService
+    {
+        ICategoryDal _categoryDal;
 
-            public CategoryManager(ICategoryDal categoryDal)
-            {
-                _categoryDal = categoryDal;
-            }
+        public CategoryManager(ICategoryDal categoryDal)
+        {
+            _categoryDal = categoryDal;
+        }
 
         public IDataResult<List<Category>> GetAll()
         {
-            return new SuccessDataResult<List<Category>>(_categoryDal.GetAll(),Messages.Added);
+            return new SuccessDataResult<List<Category>>(_categoryDal.GetAll(), Messages.Added);
         }
 
         public IDataResult<List<Category>> GetById(int categoryId)
@@ -29,4 +29,4 @@ namespace Business.Concrete
             return new SuccessDataResult<List<Category>>(_categoryDal.GetAll(c => c.CategoryId == categoryId));
         }
     }
-    }
+}
